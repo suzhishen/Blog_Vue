@@ -1,0 +1,84 @@
+/* 最大屏幕状态（桌面显示器） */
+@media screen and (min-width: 1700px) {
+	/* xxl */
+	#app {
+		width: 1450px;
+		/* div 居中 */
+		margin: 0 auto;
+		/* 文字 居中 */
+		text-align: center;
+	}
+
+	.hidden-xxl {
+		display: none !important;
+	}
+}
+
+/* 超大屏幕状态（桌面显示器） */
+@media screen and (max-width: 1699px) {
+	/* xxl */
+	#app {
+		width: 1280px;
+		/* div 居中 */
+		margin: 0 auto;
+		/* 文字 居中 */
+		text-align: center;
+	}
+
+	.hidden-xl {
+		display: none !important;
+	}
+
+}
+
+
+/* 大屏幕状态（桌面显示器） */
+@media screen and (max-width:1399px) {
+	/* xl */
+	#app {
+		width: 1170px;
+		/* div 居中 */
+		margin: 0 auto;
+		/* 文字 居中 */
+		text-align: center;
+	}
+}
+
+
+/* 大屏幕状态（桌面显示器、平板max） */
+@media screen and (max-width:1199px) {
+	/* lg */
+	#app {
+		width: 970px;
+		/* div 居中 */
+		margin: 0 auto;
+		/* 文字 居中 */
+		text-align: center;
+	}
+}
+
+
+/* 小屏幕状态（平板） */
+@media screen and (max-width:991px) {
+	/* md */
+	#app {
+		width: 768px;
+		/* div 居中 */
+		margin: 0 auto;
+		/* 文字 居中 */
+		text-align: center;
+	}
+}
+
+
+/* 超小屏幕状态（手机） */
+@media screen and (max-width:767px) {
+	/* sm */
+	#app {
+		width: 100%;
+		/* div 居中 */
+		margin: 0 auto;
+		/* 文字 居中 */
+		text-align: center;
+	}
+}

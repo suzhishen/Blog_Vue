@@ -1,0 +1,26 @@
+/* 整个页面点击弹出字体 */
+.text-popup {
+	color: rgb(255, 151, 168);
+	user-select: none;
+	white-space: nowrap;
+	position: absolute;
+	font-size: 12px;
+	z-index: 999;
+	animation: textPopup 1s;
+}
+
+@keyframes textPopup {
+
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	5% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(-50px);
+	}
+}
