@@ -1,15 +1,14 @@
 <!-- 博客左侧菜单 -->
 <template>
-	<el-row class="tac">
-		<el-col>
-			<div id="picture">
-				<el-avatar :style="randomColor()">之深</el-avatar>
-				<el-avatar :style="randomColor()">之深1</el-avatar>
-				<el-avatar :style="randomColor()">之深2</el-avatar>
-			</div>
+	<el-col>
+		<div id="picture">
+			<el-avatar class="avatar" :style="randomColor()">之深</el-avatar>
+			<el-avatar class="avatar" :style="randomColor()">之深1</el-avatar>
+			<el-avatar class="avatar" :style="randomColor()">之深2</el-avatar>
+		</div>
+		<div>
 			<el-menu default-active="首页" class="el-menu-blog" @open="handleOpen" @close="handleClose">
-				<el-menu-item v-for="item in menuData" v-show="!item.children" v-bind:key="item.name"
-					:index="item.label">
+				<el-menu-item v-for="item in menuData" v-show="!item.children" v-bind:key="item.name" :index="item.label">
 					<el-icon>
 						<component :is="item.icon" />
 					</el-icon>
@@ -30,21 +29,29 @@
 					</el-menu-item-group>
 				</el-sub-menu>
 			</el-menu>
-		</el-col>
-	</el-row>
+		</div>
+	</el-col>
 </template>
 
 
 <script lang="ts" setup>
-	import { ref } from 'vue'
-	import {
-		Document,
-		Menu as IconMenu,
-		Location,
-		Setting,
-		House,
-		UserFilled
-	} from '@element-plus/icons-vue'
+	import { Location, Setting, House } from '@element-plus/icons-vue'
+
+	const handleOpen = (key : string, keyPath : string[]) => {
+		console.log(key, keyPath)
+	}
+	const handleClose = (key : string, keyPath : string[]) => {
+		console.log(key, keyPath)
+	}
+
+	const randomColor = () => {
+		// 生成随机RGB颜色值
+		const r = Math.floor(Math.random() * 256);
+		const g = Math.floor(Math.random() * 256);
+		const b = Math.floor(Math.random() * 256);
+		// 返回RGB格式的颜色
+		return `backgroundColor:rgb(${r}, ${g}, ${b}, 0.9)`;
+	}
 
 	var menuData = [{
 		path: "/",
@@ -117,23 +124,6 @@
 			url: "Home/Home",
 		}]
 	}]
-
-	const handleOpen = (key : string, keyPath : string[]) => {
-		console.log(key, keyPath)
-	}
-	const handleClose = (key : string, keyPath : string[]) => {
-		console.log(key, keyPath)
-	}
-
-	const randomColor = () => {
-		// 生成随机RGB颜色值
-		const r = Math.floor(Math.random() * 256);
-		const g = Math.floor(Math.random() * 256);
-		const b = Math.floor(Math.random() * 256);
-
-		// 返回RGB格式的颜色
-		return `backgroundColor:rgb(${r}, ${g}, ${b}, 0.9)`;
-	}
 </script>
 
 <!-- <style scoped>   scoped 刷新页面才会生效 -->
@@ -142,32 +132,32 @@
 		height: 100px;
 		line-height: 100px;
 		background-color: #f9f9f9;
-		border-right: 1px solid #ddd;
+		/* border-right: 1px solid #ddd; */
+		position: relative;
 		/* padding-top: 20px; */
 	}
-
-	.el-menu-blog li {
+	
+	.el-menu-blog li{
 		color: #777;
 	}
 	
 	.el-menu-blog li div{
 		color: #777;
 	}
-
+	
 	.el-menu-item.is-active {
 		background-color: var(--el-color-primary-light-8);
 	}
 
-	.el-avatar--circle {
+	.avatar {
 		background-color: randomColor()
 	}
 
 	/* menu */
 	.el-menu-blog:not(.el-menu--collapse) {
 		width: 100%;
-		height: 100vh;
 		/* min-height: 800px; */
 		background-color: #f9f9f9;
-		/* border: none; */
+		border-right: none;
 	}
 </style>

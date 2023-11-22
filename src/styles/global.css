@@ -24,3 +24,8 @@
 		transform: translateY(-50px);
 	}
 }
+
+/* 滚动条不显示 */
+::-webkit-scrollbar {
+    width: 0px;
+}

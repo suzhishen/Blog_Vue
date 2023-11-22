@@ -1,11 +1,10 @@
 /* 最大屏幕状态（桌面显示器） */
 @media screen and (min-width: 1700px) {
+
 	/* xxl */
 	#app {
 		width: 1450px;
-		/* div 居中 */
 		margin: 0 auto;
-		/* 文字 居中 */
 		text-align: center;
 	}
 
@@ -16,12 +15,11 @@
 
 /* 超大屏幕状态（桌面显示器） */
 @media screen and (max-width: 1699px) {
+
 	/* xxl */
 	#app {
 		width: 1280px;
-		/* div 居中 */
 		margin: 0 auto;
-		/* 文字 居中 */
 		text-align: center;
 	}
 
@@ -34,12 +32,11 @@
 
 /* 大屏幕状态（桌面显示器） */
 @media screen and (max-width:1399px) {
+
 	/* xl */
 	#app {
 		width: 1170px;
-		/* div 居中 */
 		margin: 0 auto;
-		/* 文字 居中 */
 		text-align: center;
 	}
 }
@@ -47,6 +44,7 @@
 
 /* 大屏幕状态（桌面显示器、平板max） */
 @media screen and (max-width:1199px) {
+
 	/* lg */
 	#app {
 		width: 970px;
@@ -60,12 +58,11 @@
 
 /* 小屏幕状态（平板） */
 @media screen and (max-width:991px) {
+
 	/* md */
 	#app {
 		width: 768px;
-		/* div 居中 */
 		margin: 0 auto;
-		/* 文字 居中 */
 		text-align: center;
 	}
 }
@@ -73,12 +70,58 @@
 
 /* 超小屏幕状态（手机） */
 @media screen and (max-width:767px) {
+
 	/* sm */
 	#app {
 		width: 100%;
-		/* div 居中 */
 		margin: 0 auto;
-		/* 文字 居中 */
 		text-align: center;
+	}
+
+	.call_menu_button {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		left: 25px;
+	}
+
+	#menu {
+		width: 70%;
+	}
+
+	.layout-container {
+		width: 70%;
+	}
+
+	.show_menu {
+		animation: show_menu_animation .5s;
+		position: relative;
+		left: 0%;
+	}
+
+	@keyframes show_menu_animation {
+		0% {
+			left: -100%;
+		}
+
+		100% {
+			left: 0%;
+		}
+	}
+
+	.hidden_menu {
+		position: relative;
+		animation: hidden_menu_animation .5s;
+		left: -100%;
+	}
+
+	@keyframes hidden_menu_animation {
+		0% {
+			left: 0%;
+		}
+
+		100% {
+			left: -100%;
+		}
 	}
 }

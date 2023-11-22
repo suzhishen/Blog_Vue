@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, ref } from 'vue'
 import App from './App.vue'
 import router from './router'	// 路由文件	npm install vue-router@4
 import store from './store'		// 状态管理文件	npm install vuex@4
@@ -9,8 +9,7 @@ import ElementPlus from 'element-plus'
 
 // CSS
 import 'element-plus/dist/index.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import "~bootstrap/scss/bootstrap.scss";
 // import * as bootstrap from 'bootstrap'
 
@@ -26,12 +25,11 @@ import './styles/index.css';
 		// 随机提示
 		// var index = Math.round(Math.random() * 11);
 		document.documentElement.addEventListener('click', function(event) {
-			var x = event.pageX; //获取鼠标所距离X轴位置  包括右拉位置
-			var y = event.pageY; //获取鼠标所距离Y轴位置  包括下拉位置
+			var x = event.pageX;
+			var y = event.pageY;
 			// 创建span标签
 			var span_Text = document.createElement('span');
 			span_Text.className = 'text-popup';
-			// 在末尾追加新元素
 			this.appendChild(span_Text);
 			if (arr[index]) {
 				span_Text.innerHTML = arr[index];
@@ -48,7 +46,6 @@ import './styles/index.css';
 			});
 			span_Text.style.left = (x - span_Text.clientWidth / 2) + 'px';
 			span_Text.style.top = (y - span_Text.clientHeight) + 'px';
-			// index递增
 			index++;
 			// 随机提示
 			// index = Math.round(Math.random() * 11);
@@ -68,10 +65,22 @@ import './styles/index.css';
 	fnText_Popup(['富强', '民主', '文明', '和谐', '自由', '平等', '公正', '法治', '爱国', '敬业', '诚信', '友善']);
 })();
 
-const APP = createApp(App)
+const app = createApp(App)
 
-APP.use(ElementPlus)
-APP.use(store)
-APP.use(router)
 
-APP.mount('#app')
+// const windowHeight = ref(window.innerHeight);
+// // 窗口大小改变时更新窗口高度
+// const handleResize = () => {
+// 	windowHeight.value = window.innerHeight;
+// };
+// window.addEventListener('click', handleResize);
+// // 在全局上下文中提供全局变量
+// app.provide('windowHeight', windowHeight);
+
+
+
+app.use(ElementPlus)
+app.use(store)
+app.use(router)
+
+app.mount('#app')
