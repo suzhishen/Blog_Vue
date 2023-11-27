@@ -4,26 +4,20 @@ import {
 	createWebHistory
 } from "vue-router";
 
-import Home from '../views/home/index.vue'
+import Main from '../views/main.vue'
+import home from './modules/home.js'
+import login from './modules/login.js'
 
 const routes = [
 	// 访问主链接进入
 	{
 		path: '/',
-		component: Home,
+		component: Main,
 		redirect: '/home',	// 重定向，进入就跳转到
-		children: [{
-			path: 'home',
-			name: 'Home',
-			hidden: true,
-			alwaysShow: true,
-			component: () => import('@/views/home/index.vue'),
-			meta: {
-				title: '首页',
-				icon: 'dashboard',
-				affix: true
-			}
-		}]
+		children: [
+			home,
+			login,
+		]
 	},
 	// 添加其他路由
 	{
@@ -38,8 +32,8 @@ const routes = [
 	},
 ];
 
-const asyncRoutes = [
-	// purchasing,
+export const asyncRoutes = [
+	// home,
 	// admin,
 	// 404 page must be placed at the end !!!
 	{

@@ -1,3 +1,33 @@
+/* --------------------- 公共 --------------------- */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+a:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+body {
+	background-color: rgb(241, 241, 241);
+}
+
+.color_777 {
+	color: #777
+}
+
+
+
 /* 整个页面点击弹出字体 */
 .text-popup {
 	color: rgb(255, 151, 168);

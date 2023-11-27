@@ -8,7 +8,7 @@
 		</div>
 		<div>
 			<el-menu default-active="首页" class="el-menu-blog" @open="handleOpen" @close="handleClose">
-				<el-menu-item v-for="item in menuData" v-show="!item.children" v-bind:key="item.name" :index="item.label">
+				<el-menu-item v-for="item in menuData" v-show="!item.children" v-bind:key="item.name" :index="item.label" @click="clickMenu(item)">
 					<el-icon>
 						<component :is="item.icon" />
 					</el-icon>
@@ -36,6 +36,11 @@
 
 <script lang="ts" setup>
 	import { Location, Setting, House } from '@element-plus/icons-vue'
+  import { useRouter, useRoute } from "vue-router";
+  const router = useRouter();
+  const route = useRoute();
+  import { defineEmits } from "vue";
+  const emits = defineEmits();
 
 	const handleOpen = (key : string, keyPath : string[]) => {
 		console.log(key, keyPath)
@@ -53,14 +58,25 @@
 		return `backgroundColor:rgb(${r}, ${g}, ${b}, 0.9)`;
 	}
 
+  const clickMenu = (item) => {
+    // 点击菜单跳转路由
+    // console.log(item)
+    //判断当前路径与跳转路径是否相同
+    if (route.path !== item.path) {
+      router.push(item.path)
+    }
+    // 传递 item 到父组件
+    emits('menuButtonClick', item);
+  }
+
 	var menuData = [{
-		path: "/",
+		path: "/home",
 		name: "home",
 		label: "首页",
 		icon: House,
 		url: "Home/Home",
 	}, {
-		path: "/",
+		path: "/login",
 		name: "home",
 		label: "归档",
 		icon: House,

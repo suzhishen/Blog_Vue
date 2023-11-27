@@ -1,32 +1,3 @@
-/* --------------------- 公共 --------------------- */
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	max-width: 100%;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-
-a:hover {
-	text-decoration: none;
-	cursor: default;
-}
-
-body {
-	background-color: rgb(241, 241, 241);
-}
-
-.color_777 {
-	color: #777
-}
-
-
 /* --------------------- 头部 --------------------- */
 
 #header {
@@ -75,21 +46,42 @@ body {
 	padding: 0px;
 }
 
-#blog_midland .midland_header {
-	height: 100px;
-	background-color: #f9f9f9;
-	text-align: start;
-	padding: 20px;
+.resize_left_line {
+	/* cursor: w-resize; */
+	cursor: none;
+	width: 10px;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	position: absolute;
+	right: 0;
 }
 
-.midland_header_1 {
-	margin: 0px;
-	font-size: 30px
+#caret_left {
+	width: 1em;
+	height: 1em;
+	position: fixed;
+	transform: translateX(-9px);
 }
 
-.midland_header_2 {
-	line-height: 30px
+#right {
+	max-width: 20.8333%;
+	background-color: #61b7fc;
 }
 
+.resize_right_line {
+	cursor: none;
+	/* cursor: e-resize; */
+	width: 3px;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	position: absolute;
+}
+
+#caret_right {
+	width: 1em;
+	height: 1em;
+	position: fixed;
+	transform: translateX(-4px);
+}
 
 /* --------------------- 底部 --------------------- */

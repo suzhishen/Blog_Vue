@@ -1,7 +1,7 @@
 import { createApp, ref } from 'vue'
 import App from './App.vue'
 import router from './router'	// 路由文件	npm install vue-router@4
-import store from './store'		// 状态管理文件	npm install vuex@4
+// import store from './store'		// 状态管理文件	npm install vuex@4
 import ElementPlus from 'element-plus'
 
 // JS
@@ -16,7 +16,7 @@ import 'element-plus/dist/index.css'
 import './styles/normalize.css';
 import './styles/media.css';
 import './styles/global.css';
-import './styles/index.css';
+import './styles/main.css';
 
 // 调用自定义初始化函数
 (function() {
@@ -68,11 +68,13 @@ import './styles/index.css';
 const app = createApp(App)
 
 
+// // 存储全局窗口高度
 // const windowHeight = ref(window.innerHeight);
 // // 窗口大小改变时更新窗口高度
 // const handleResize = () => {
 // 	windowHeight.value = window.innerHeight;
 // };
+// // 添加窗口大小改变事件监听器
 // window.addEventListener('click', handleResize);
 // // 在全局上下文中提供全局变量
 // app.provide('windowHeight', windowHeight);
@@ -80,7 +82,7 @@ const app = createApp(App)
 
 
 app.use(ElementPlus)
-app.use(store)
+// app.use(store)
 app.use(router)
 
 app.mount('#app')
